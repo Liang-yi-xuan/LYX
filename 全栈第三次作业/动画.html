@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./iconfont/iconfont.css">
+    <style>
+        body {
+            overflow: scroll;
+            overflow-x: hidden;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+
+        }
+        .navigation {
+            height: 50px;
+            margin: 0 auto;
+            display: flex;
+        }
+
+        .navigation span {
+            position: relative;
+            display:inline-block;
+            line-height: 50px;
+        }
+
+        .navigation .photo {
+            position: relative;
+            margin: 0 auto;
+            perspective: 800px;
+        }
+
+        .navigation .photo img {
+            transition: all 1s;
+        }
+
+        .photo :hover{
+            transform: translateZ(-100px);
+        }
+
+        .head img {
+            width: 1423px;
+        }
+
+        .head .button {
+            background-color: #2a3f17;
+            width: 200px;
+            height: 50px;
+            color:#fff;
+            line-height: 50px;
+            text-align: center;
+            position: relative;
+            margin: -250px auto;
+            left: -325px;
+            font-size: 22px;
+        }
+
+        .head .button a {
+            color: #fff;
+        }
+
+        .hot {
+            display: flex;
+            position: relative;
+            justify-content:center;
+            top: 350px;
+        }
+
+        .hot img {
+            width: 300px;
+        }
+
+
+        .hot .one{
+            transition: all 1s;
+            margin: 0 25px;
+        }
+
+        .one:hover {
+            transform: translateY(-50px);
+        }
+
+        .hot .two{
+            transition: all 1s;
+            margin: 0 25px;
+        }
+
+        .two:hover {
+            transform: translateY(-50px);
+        }
+
+        .hot .three{
+            transition: all 1s;
+            margin: 0 25px;
+        }
+
+        .three:hover {
+            transform: translateY(-50px);
+        }
+
+        .deer {
+            position: relative;
+            top:550px;
+        }
+
+        .deer img {
+            width: 1423px;
+        }
+
+        .content {
+            background-color: #e0dfdf;
+            width: 800px;
+            height: 460px;
+            margin: 500px auto;
+            color: #4f5d44;
+            font-size: 20px;
+            padding: 50px;
+            transition: all 1s;
+            perspective: 1000px;
+            top: -600px;
+            position: relative;
+        }
+
+        .content:hover {
+            transform: translateY(-30px);
+        }
+
+        .content .sign {
+            background-color: #2a3f17;
+            width: 150px;
+            height: 60px;
+            color: #fff;
+            text-align: center;
+            line-height: 60px;
+            font-size: 20px;
+            position: relative;
+            margin: 0 auto;
+            top: 50px;
+            transition: all 1.5s;
+        }
+
+        .sign:hover {
+            transform: translateZ(-100px);
+        }
+
+        .title {
+            color: #4f5d44;
+            font-size: 35px;
+            text-align: center;
+            top: -870px;
+            position: relative;
+            transition: all 1s;
+            width: 250px;
+            height: 50px;
+            margin: 0 auto;
+            line-height: 50px;
+        }
+
+        .title:hover {
+            border: solid 3px #4f5d44;
+
+        }
+
+
+        .difference {
+            display: flex;
+            justify-content:center;
+            position: relative;
+            top: -800px;
+            text-align: center;
+        }
+
+        .difference .horse,
+        .difference .kangaroo,
+        .difference .lion ,
+        .difference .hummingbird{
+            background-color: #e0dfdf;
+            width: 200px;
+            height: 300px;
+            margin: 0 10px;
+            transition: all 1s;
+        }
+
+        .horse:hover {
+            transform: translateY(-30px);
+        }
+
+        .kangaroo:hover {
+            transform: translateY(-30px);
+        }
+
+        .lion:hover {
+            transform: translateY(-30px);
+        }
+
+        .hummingbird:hover {
+            transform: translateY(-30px);
+        }
+
+        .difference img {
+            width: 200px;
+        }
+
+        .difference dt {
+            color:#2a3f17;
+            font-size: 20px;
+            margin: 10px;
+        }
+
+        .difference a{
+            color: #2a3f17;
+            font-size: 15px;
+            text-decoration: #2a3f17 underline;
+
+        }
+
+        .more {
+            color: #2a3f17;
+            font-size: 35px;
+            text-align: center;
+            top: -760px;
+            position: relative;
+            background-color:#fff;
+            margin: 0 auto;
+            line-height: 70px;
+            width: 360px;
+            height: 70px;
+            border: 2px solid #2a3f17;
+            
+        }
+
+        .more:hover{
+            background-color: #2a3f17;
+            color: #fff;
+            transition: all 1s;
+        }
+
+        .squirrel{
+            position: relative;
+            top: -700px;
+            left: 70px;
+            perspective: 800px;
+        }
+
+        .squirrel img {
+            width: 600px;
+        }
+
+        .squirrel .title2 {
+            color: #2a3f17;
+            font-size: 35px;
+            top: -800px;
+            left: 70px;
+            position: relative;
+            text-align: center;
+            transition: all 1s;
+        }
+
+        .title2:hover {
+            transform: translateY(-30px);
+        }
+
+        .squirrel .family {
+            color: #2a3f17;
+            font-size: 20px;
+            top: -740px;
+            position: relative;
+            width: 520px;
+            margin: 0 auto;
+            left: 250px;
+            transition: all 1s;
+        }
+
+        .family:hover {
+            transform: translateZ(50px);
+        }
+
+        .line {
+            position: relative;
+            top: -1400px;
+            left: 750px;
+        }
+
+        .line img{
+            width: 60px;
+            margin: 20px 10px;
+        }
+
+        .line dd {
+            color: #2a3f17;
+            font-size: 20px;
+            position: relative;
+            line-height: 100px;
+        }
+
+        .line1{
+            display: flex;
+            position: relative;
+            width: 250px;
+            height: 100px;
+            justify-content: center;
+            transition: all 1s;
+        }
+        
+        .line1:hover{
+            transform: translateX(50px);
+        }
+
+        .line2{
+            display: flex;
+            position: relative;
+            left: -5px;
+            width: 300px;
+            height: 100px;
+            justify-content: center;
+            transition: all 1s;
+        }
+        
+        .line2:hover{
+            transform: translateX(50px);
+        }
+
+        .line3{
+            display: flex;
+            position: relative;
+            left: 10px;
+            width: 200px;
+            height: 100px;
+            justify-content: center;
+            transition: all 1s;
+        }
+        
+        .line3:hover{
+            transform: translateX(50px);
+        }
+
+        .line4{
+            display: flex;
+            position: relative;
+            left: -10px;
+            width: 350px;
+            height: 100px;
+            justify-content: center;
+            transition: all 1s;
+        }
+        
+        .line4:hover{
+            transform: translateX(50px);
+        }
+
+        hr {
+            position: relative;
+            top: -1200px;
+        }
+
+        .last {
+            position: relative;
+            top: -1050px;
+            text-align: center;
+            left: -400px;
+        }
+
+        .last .title3 {
+            font-size: 30px;
+            color:#2a3f17;
+            padding: 20px 0;
+        }
+
+        .last .MOER {
+            font-size: 25px;
+            color:#4d5b41;
+            position: relative;
+            top: -130px;
+            left: 300px;
+        }
+
+        .last .create {
+            font-size: 18px;
+            position: relative;
+            top: -110px;
+            left: 300px;
+            color:#697461;
+            padding: 5px 0;
+        }
+
+        .end {
+            background-color:#949f8b;
+            position: relative;
+            color:#fff;
+            font-size: 20px;
+            text-align: center;
+            line-height: 50px;
+            width: 250px;
+            height: 50px;
+            top: -1250px;
+            left: 900px;
+            transition: all 1s;
+        }
+
+        .end:hover{
+            background-color: #fff;
+            color:#949f8b;
+            transform: translateY(-30px);
+        }
+    </style>
+</head>
+<body>
+    <!-- 快捷导航 -->
+    <div class="navigation">
+        <span class="iconfont icon-a-115-lanmuguanli"></span>
+        <div class="photo"><img src="./uploads/相机.png" alt=""></div>
+        <span class="iconfont icon-sousuo"></span>
+    </div>
+    <!-- 头部区域 -->
+    <div class="head">
+        <div><img src="./uploads/乌龟头部.png" alt=""></div>
+        <div class="button"><a href="#">EXPIORE</a></div>
+    </div>
+    <!-- 火烈鸟部分 -->
+    <div class="hot">
+        <div class="one"><img src="./uploads/火烈鸟1.png" alt=""></div>
+        <div class="two"><img src="./uploads/火烈鸟2.png" alt=""></div>
+        <div class="three"><img src="./uploads/火烈鸟3.png" alt=""></div>
+    </div>
+    <!-- content部分 -->
+    <div class="deer"><img src="./uploads/鹿中部.png" alt=""></div>
+    <div class="content">
+        <div class="box">“Family Farms is the best place，where I can buy fruit,vegetable,meat,honey,milk,
+        eggs and so on for my retaurant directly fromupplier. Super convinient.Thank you”
+        xdccnfc cfvfesc cfnccnjdcn cfjdcdsr dcwwzwqg ejs dddc ddf fnfjv eij fvnv jnxzexh cn
+        cdcmdsc ddnc, cddmdcds dncdn cdcn wqeoeas, dcndassasas,cdcndcnc cciqoskxm
+        cbdcpqslwq nfnere nfncsfjjc dndcww frhfjnc qpdjweiw cnncqe, cqjsdc ccn dcjndc ,
+        ncf cdncjd dcdjcndq csjncq dcdncf dcdjdnc cdjsq, qkodkqe wqcnpsdc cdnqq qcw,
+        cqnonxj dcdcnd dcnjsdvb wcnwq cowwncjq jjcnjncqnw wcq c wd cwch, cnjncnc ece
+        cdcnncdwnc nenwc dcnnc cjcj , c cjrnc wecwc .</div>
+        <div class="sign">SIGN UP</div>
+    </div>
+    <!-- difference部分 -->
+    <div class="title">Difference</div>
+    <div class="difference">
+        <dl class="horse">
+            <img src="./uploads/马.png" alt="">
+            <dt>Horse</dt>
+            <dd><a href="#">A difference story</a></dd>
+        </dl>
+        <dl class="kangaroo">
+            <img src="./uploads/袋鼠.png" alt="">
+            <dt>Kangaroo</dt>
+            <dd><a href="#">A difference story</a></dd>
+        </dl>
+        <dl class="lion">
+            <img src="./uploads/狮子.png" alt="">
+            <dt>Lion</dt>
+            <dd><a href="#">A difference story</a></dd>
+        </dl>
+        <dl class="hummingbird">
+            <img src="./uploads/小鸟.png" alt="">
+            <dt>Hummingbird</dt>
+            <dd><a href="#">A difference story</a></dd>
+        </dl>
+    </div>
+    <!-- more部分 -->
+    <div class="more">know more</div>
+    <!-- 松鼠部分 -->
+    <div class="squirrel">
+        <img src="./uploads/松鼠.png" alt="">
+        <div class="title2">The Photo</div>
+        <div class="family">“Family Farms is the best placewhere I
+        can buy fruit,vegetable,meat,honey,milk,
+        eggs and so on for my retaurant directly from
+        supplier. Super convinient.Thank you”</div>
+    </div>
+    <!-- 序号部分 -->
+    <div class="line">
+        <dl class="line1">
+            <dt><img src="./uploads/1.png" alt=""></dt>
+            <dd>Looking for it</dd>
+        </dl>
+        <dl class="line2">
+            <dt><img src="./uploads/2.png" alt=""></dt>
+            <dd>Cultivate feelings</dd>
+        </dl>
+        <dl class="line3">
+            <dt><img src="./uploads/3.png" alt=""></dt>
+            <dd>Shooting</dd>
+        </dl>
+        <dl class="line4">
+            <dt><img src="./uploads/4.png" alt=""></dt>
+            <dd>Harvest achievement</dd>
+        </dl>
+    </div>
+    <hr>
+    <!-- 底部 -->
+    <div class="last">
+        <div class="title3">IN THE WILD</div>
+        <div class="title3">IN THE SEA</div>
+        <div class="MOER">MOER</div>
+        <div class="create">We create art.</div>
+        <div class="create">We create life</div>
+    </div>
+    <div class="end">
+        <div class="world">Big World</div>
+    </div>
+</body>
+</html>

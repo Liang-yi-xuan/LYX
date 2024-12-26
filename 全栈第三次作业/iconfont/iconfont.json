@@ -1,0 +1,23 @@
+{
+  "id": "4771841",
+  "name": "讯息",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "629357",
+      "name": "搜索",
+      "font_class": "sousuo",
+      "unicode": "e651",
+      "unicode_decimal": 58961
+    },
+    {
+      "icon_id": "28075404",
+      "name": "115-栏目管理",
+      "font_class": "a-115-lanmuguanli",
+      "unicode": "e8da",
+      "unicode_decimal": 59610
+    }
+  ]
+}
