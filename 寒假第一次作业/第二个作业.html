@@ -81,16 +81,20 @@
         function getstatus() {
             let email = document.getElementsByClassName("email")[0].value;
             let password = document.getElementsByClassName("password")[0].value;
+            let messages = document.getElementsByClassName('messages');
             let reg = new RegExp("\\.", 'gi');
             let reslut = email.match(reg);
             if (email.indexOf('@qq.com') == -1 && email.indexOf('@qq.cn') == -1 && email.indexOf('@163.com') == -1 && email.indexOf('@163.cn') == -1) {
+                change(messages);
                 alert('邮箱填写错误!')
             }
             else if (reslut.length > 1) {
                 console.log(reslut.length);
+                change(messages);
                 alert('邮箱填写错误!');
             }
             else if (password.length == 0) {
+                change(messages);
                 alert('请输入密码!')
             }
             else {
