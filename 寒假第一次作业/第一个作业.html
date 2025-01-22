@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <div>请输入一个字符串:</div>
+        <input type="text" class="str" id="STR">
+        <div>请输入一个子串:</div>
+        <input type="text" class="re" id="RE">
+        <button onclick="gets()">提交</button>
+        <div>子串出现的次数为:</div>
+        <span></span>
+    </div>
+    <script>
+        function gets() {
+            let str = document.getElementsByClassName("str")[0].value;
+            let re = document.getElementsByClassName("re")[0].value;
+            let count = document.getElementsByTagName("span");
+            let reg = new RegExp(re, 'gi');
+            let reslut = str.match(reg);
+            console.log(reslut.length);
+            count.innerText = reslut.length;
+        }
+    </script>
+</body>
+</html>
