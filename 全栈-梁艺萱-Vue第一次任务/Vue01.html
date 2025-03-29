@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wordcss {
+            font-size: 40px;
+            font-weight: bold;
+            line-height: 120px;
+        }
+
+        .inputcss {
+            width: 250px;
+            height: 40px;
+            font-size: 20px;
+
+        }
+
+        button {
+            width: 50px;
+            height: 30px;
+            font-size: 15px;
+            margin-right: 10px;
+        }
+
+        .more {
+            font-size: 30px;
+            color: red;
+            line-height: 100px;
+            font-weight: bold;
+            left: 50px;
+            position: relative;
+        }
+
+        .title {
+            font-size: 30px;
+            position: relative;
+            left: 50px;
+        }
+
+        .list {
+            font-size: 30px;
+            position: relative;
+            left: 20px;
+        }
+
+        .message {
+            font-size: 30px;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .change {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <input type="text" class="inputcss" v-model="inputword">
+        <div class="wordcss">你要输入的单词是：{{ inputword }}</div>
+        <button @click="increase">添加</button>
+        <button @click="decrease">删除</button>
+        <div :class="{hide: ishide}" class="more">鳖加辣!单词数量太多了</div>
+        <div>
+            <div class="title" :class="{change: ischange}">单词列表:</div>
+            <ul class="list" :class="{change: ischange}">
+                <li v-for="item in words" class="message">{{ item.words }}</li>
+            </ul>
+        </div>
+    </div>
+    <script src="https://unpkg.com/vue@3.5.13/dist/vue.global.js"></script>
+    <script>
+        const app = Vue.createApp({
+            data: function() {
+                return {
+                    inputword: '',
+                    words: [],
+                    ishide: true,
+                    ischange: false
+                }
+            },
+            methods: {
+                increase() {
+                    this.words.push({ words: this.inputword })
+                    if (this.words.length > 5) {
+                        this.ishide = false
+                        this.ischange = true
+                    }
+                    this.inputword = ''
+                },
+                decrease() {
+                    // 删除单词列表中的最后一个单词
+                    this.words.pop()
+                    if (this.words.length <= 5) {
+                        this.ishide = true
+                        this.ischange = false
+                    }
+                }
+            }
+
+        })
+        app.mount('#app')
+    </script>
+</body>
+</html>
